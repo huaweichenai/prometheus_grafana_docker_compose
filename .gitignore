@@ -1,0 +1,6 @@
+.DS_Store
+.env
+
+opt/data
+
+docker-compose.yml

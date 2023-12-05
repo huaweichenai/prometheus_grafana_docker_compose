@@ -1,0 +1,21 @@
+global:
+  smtp_smarthost: 'smtp.163.com:25'
+  smtp_from: '**@163.com'
+  smtp_auth_username: '**@163.com'
+  smtp_auth_password: '***'
+  # 不进行tls验证
+  smtp_require_tls: false
+
+route:
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 10m
+  receiver: 'live-monitoring'
+
+receivers:
+  - name: 'live-monitoring'
+    email_configs:
+      - to: '**@qq.com'
+      # 是否需要接受告警恢复的通知
+      # send_resolved: true
